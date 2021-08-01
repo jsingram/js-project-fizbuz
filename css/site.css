@@ -1,0 +1,74 @@
+:root {
+    --primary-color: #676767;
+    --secondary-color: #cf000f;
+    --dark-color: #161616;
+    --white-color: #ffffff;
+
+}
+
+body {
+    color:var(--dark-color);
+}
+
+nav {
+    background-color: var(--dark-color);
+}
+
+footer{
+    background-color: var(--dark-color);
+    padding-right: 1rem;
+}
+
+footer .social>a {
+    color: var(--white-color);
+    opacity: 0.75;
+}
+
+footer .social>a:hover {
+    opacity: 0.9;
+    color: var(--secondary-color);
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: var(--primary-color);
+}
+
+main>.container {
+    padding: 60px 15px 0;
+}
+.sticky-nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100% ;
+}
+
+/* Tech Icons */
+.bs-icon {
+    color: #8512f3;
+}
+
+.js-icon {
+    color: #efd81d;
+}
+
+.html5-icon {
+    color: #dd4b25;
+}
+
+.css3-icon {
+    color: #254bdd;
+}
+
+.checklist >li i{
+    color: var(--secondary-color);
+}
+
+/* PRISM Plugin Styling */
+code[class*="language-"],
+pre[class*="language-"] {            
+    white-space: pre-wrap;            
+    word-break: break-all;
+    word-wrap: break-word;  
+    font-size: 1.5rem;                      
+}
