@@ -2,19 +2,21 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Jonathan Ingram</title>
+    <title>FizzBuzz: A Coding Project By Jonathan Ingram</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico">
     <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -33,7 +35,7 @@
     <!-- === Nav Section -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html"><img src="/img/3.svg" class="d-inline-block align-text-top" alt="Jonathan Ingram Logo" width="30" height="30">APP NAME</a>
+            <a class="navbar-brand" href="/index.html"><img src="/img/3.svg" class="d-inline-block align-text-top" alt="Jonathan Ingram Logo" width="30" height="30">FizzBuzz</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -62,7 +64,45 @@
     
     <!-- === Main Section -->
     <main class="flex-shrink-0">
-        <div class="container mt-5"></div>
+        <div class="container mt-5">
+            <div class="row row-cols-1 row-cols-lg-2">
+                <div class="col col-lg-4 border-end border-2">
+                    <h1 class="display-5 fw-bold lh-1 mb-3">FizzBuzz: A Coding Project</h1>
+                    <h4 class="lead">When it counts, you Fizz Buzz! A JavaScript coding project exercise using loops. Write a program that prints the numbers from 1 to 100 and for multiples of '3' display <strong>"Fizz"</strong> instead of the number and for the multiples of '5' display <strong>"Buzz"</strong>. If a multiple of both, display <strong>"FizzBuzz"</strong>.</h4>
+                    <h2 class="mt-5 border-bottom border-2">Instructions</h2>
+                    <p>Enter a starting value and an ending value. Press the button and the values will appear.</p>
+                </div>
+                <div class="col col-lg-8">
+                    <div>
+                        <h5>Enter Values</h5>
+                        <form class="row gy-2 gx-3" action="">
+                            <div class="col">
+                                <input type="number" aria-label="Starting Value" id="startValue" class="form-control" placeholder="Start Value" value="1">
+                            </div>
+                            <div class="col">
+                                <input type="number" aria-label="Ending Value" id="endValue" class="form-control" placeholder="End Value" value="100">
+                            </div>
+                            <div class="col-12 d-flex justify-content-end">
+                                <button id="btnSubmit" type="button" class="btn btn-dark btn-lg">FizzBuzz!</button>
+                            </div>
+                        </form>
+                        <h2 class="mt-5 border-bottom border-2">Results</h2>
+                        <div class="table-responsive">
+                            <table class="table table-dark table-striped table-sm">
+                                <thead class="invisible" id="tableHeader">
+                                    <tr>
+                                        <th>FizzBuzz Results</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="resultsTable">
+                                    <!-- Results Displayed Here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- === Footer Section -->
@@ -87,6 +127,17 @@
         </div>
     </footer>
 
+    <!-- Templates -->
+    <template id="fbTemplate">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </template>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
@@ -96,5 +147,10 @@
     </script>
     <!-- Custom Javascript -->
     <script src="/js/site.js"></script>
+
+    <!-- Event Listeners -->
+    <script>
+        document.getElementById("btnSubmit").addEventListener("click", getValues);
+    </script>
 </body>
 </html>
